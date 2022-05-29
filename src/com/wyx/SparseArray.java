@@ -12,9 +12,9 @@ package com.wyx;
  */
 public class SparseArray {
     public static void main(String[] args) {
-        //创建一个原始二维数组，6行7列
+        //创建一个原始二维数组，6行7列JKM
         int[][] dimArr = new int[6][7];
-        //在指定位置填入数据
+        //在指定位置填入数据GHY45=
         dimArr[1][2] = 1;
         dimArr[2][3] = 2;
         dimArr[4][5] = 2;
