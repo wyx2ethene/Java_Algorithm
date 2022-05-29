@@ -12,13 +12,13 @@ package com.wyx;
  */
 public class SparseArray {
     public static void main(String[] args) {
-        //创建一个原始二维数组，6行7列JKM
+        // 创建一个原始二维数组，6行7列JKM
         int[][] dimArr = new int[6][7];
         //在指定位置填入数据GHY45=
         dimArr[1][2] = 1;
         dimArr[2][3] = 2;
         dimArr[4][5] = 2;
-        //输出原始二维数组
+        // 输出原始二维数组
         System.out.println("原始二维数组：");
         for (int[] row : dimArr) {
             for (int data : row) {
@@ -50,7 +50,7 @@ public class SparseArray {
      * @param dimArr 二维数组
      */
     private static void dimArr2SparseArr(int[][] dimArr) {
-        //遍历原始数组，得到有效数据个数sum
+        // 遍历原始数组，得到有效数据个数sum
         int sum = 0;
         for (int[] row : dimArr) {
             for (int data : row) {
@@ -59,13 +59,13 @@ public class SparseArray {
                 }
             }
         }
-        //根据sum创建稀疏数组sparseArr int[sum+1][3]，列数固定为3，分别为行row，列col，值val
+        // 根据sum创建稀疏数组sparseArr int[sum+1][3]，列数固定为3，分别为行row，列col，值val
         int[][] sparseArr = new int[sum + 1][3];
         //将二维数组的有效数据存入稀疏数组
         sparseArr[0][0] = dimArr.length;
         sparseArr[0][1] = dimArr[0].length;
         sparseArr[0][2] = sum;
-        //i记录稀疏数组的行列数，由于第一行已经被填充，故i从1开始
+        // i记录稀疏数组的行列数，由于第一行已经被填充，故i从1开始
         int i = 1;
         for (int row = 0; row < dimArr.length; row++) {
             for (int col = 0; col < dimArr[row].length; col++) {
@@ -78,7 +78,7 @@ public class SparseArray {
                 }
             }
         }
-        //输出稀疏数组
+        // 输出稀疏数组
         System.out.println("稀疏数组：");
         for (int[] row : sparseArr) {
             for (int data : row) {
@@ -94,12 +94,12 @@ public class SparseArray {
      * @param sparseArr 稀疏数组
      */
     private static void sparseArr2DimArr(int[][] sparseArr) {
-        //读取稀疏数组第一行，根据第一行数据，创建原始二维数组
+        // 读取稀疏数组第一行，根据第一行数据，创建原始二维数组
         int row = sparseArr[0][0];
         int col = sparseArr[0][1];
         int[][] dimArr = new int[row][col];
-        //分别读取稀疏数组后几行数据，并赋给二维数组即可
-        //r代表行，因为i第一行已被读取，故r从1开始
+        // 分别读取稀疏数组后几行数据，并赋给二维数组即可
+        // r代表行，因为i第一行已被读取，故r从1开始
         for (int r = 1; r < sparseArr.length; r++) {
             //获取dimArr中有效数据所在行索引
             int dim_row = sparseArr[r][0];
@@ -110,7 +110,7 @@ public class SparseArray {
             //赋值
             dimArr[dim_row][dim_col] = dim_val;
         }
-        //输出二维数组
+        // 输出二维数组
         System.out.println("二维数组：");
         for (int[] rows : dimArr) {
             for (int data : rows) {
