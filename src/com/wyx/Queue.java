@@ -120,6 +120,7 @@ public class Queue {
         System.out.println(queue.tailQueue());
         // 展示队列头元素，并模拟出队列操作(元素并未真的从数组中删除)
         System.out.println(queue.getQueue());
+        System.out.println(queue.getQueue());
         // 再次展示所有元素
         queue.showQueue();
     }
