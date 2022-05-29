@@ -45,9 +45,9 @@ public class SparseArray {
     }
 
     /**
-     * convert two-dimensional array to sparse array
+     * 二维数组转稀疏数组
      *
-     * @param dimArr: two-dimensional array
+     * @param dimArr 二维数组
      */
     private static void dimArr2SparseArr(int[][] dimArr) {
         //遍历原始数组，得到有效数据个数sum
@@ -89,9 +89,9 @@ public class SparseArray {
     }
 
     /**
-     * convert sparse array to two-dimensional array
+     * 稀疏数组转二维数组
      *
-     * @param sparseArr: sparse array
+     * @param sparseArr 稀疏数组
      */
     private static void sparseArr2DimArr(int[][] sparseArr) {
         //读取稀疏数组第一行，根据第一行数据，创建原始二维数组
